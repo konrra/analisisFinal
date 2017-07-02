@@ -276,12 +276,13 @@ function seleccionados(){
 					</div>
 				</c:if>
 				<c:if test="${valHeung != null}">
-				<strong>Metodo Heun(Euler mejorado)</strong>
+				
 					<hr style="border-top: 3px solid #01395e; 
    border-bottom: 2px dashed #01395e; 
    border-left:none; 
    border-right:none; 
    height: 6px; ">
+   <strong>Metodo Heun(Euler mejorado)</strong>
 					<br>
 <!-- 					<div class="form-group"> -->
 					<div class="col-md-4">

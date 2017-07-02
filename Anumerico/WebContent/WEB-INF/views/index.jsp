@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 
-<%-- <script type="text/javascript" src="${ctx}/include/jqplot/jquery.js"></script> --%>
-<%-- <script type="text/javascript" src="${ctx}/include/jqplot/jquery.jqplot.js"></script> --%>
 <link rel="stylesheet" type="text/css"
 	href="${ctx}/include/jqplot/jquery.jqplot.css" />
 
@@ -15,23 +13,17 @@
 	src="${ctx}/include/jqplot/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<!-- <script language="javascript" type="text/javascript" src="jquery.jqplot.min.js"></script> -->
 <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
-<!-- <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" /> -->
 <head>
 
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Bienvenido</title>
-<!-- Bootstrap CSS -->
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
-<%-- <link rel="stylesheet" type="text/css" href="${ctx}/include/bootstrap/css/bootstrap.min.css" /> --%>
 
 </head>
 <body>
@@ -98,8 +90,6 @@
 
 		<div class="row featurette">
 			<div class="col-md-7 col-md-push-5">
-<!-- 				<h2 class="featurette-heading"><span class="text-muted">Investigaciones Matematicas</span> -->
-<!-- 				</h2> -->
 				<p class="lead">Las primeras aportaciones de Pierre de Fermat
 					datan de 1629, cuando abordó la tarea de reconstruir algunas de las
 					demostraciones perdidas del matemático griego Apolonio de Perga
@@ -112,10 +102,6 @@
 					hipérbola, la parábola y la circunferencia.</p>
 			</div>
 			<div class="col-md-5 col-md-pull-7">
-<!-- 				<img class="featurette-image img-responsive center-block" -->
-<!-- 					 alt="500x500" src="pierre.jpg" -->
-<!-- 					data-holder-rendered="true"> -->
-					
 					<img  class="img-thumbnail" src="http://lh3.googleusercontent.com/-Mepddpx7H7c/VdKF6Oi47bI/AAAAAAAAp34/cnmWXVVFCnQ/clip_image009_thumb.png?imgmax=800" width="500" height="500">
 			</div>
 		</div>
@@ -124,9 +110,6 @@
 
 		<div class="row featurette">
 			<div class="col-md-7">
-<!-- 				<h2 class="featurette-heading"> -->
-<!-- 					And lastly, this one. <span class="text-muted">Checkmate.</span> -->
-<!-- 				</h2> -->
 				<p class="lead">En el ámbito de la óptica geométrica, tras
 					asumir correctamente que cuando la luz se desplaza en un medio más
 					denso su velocidad disminuye, demostró que el camino de un rayo
@@ -146,7 +129,6 @@
 		<strong>Integrantes</strong>
 
 		<hr class="featurette-divider">
-		<!-- /END THE FEATURETTES -->
 
 		<div class="row">
 			<div class="col-sm-3">
@@ -185,7 +167,6 @@
 			<p class="pull-right">
 				<a href="#">Back to top</a>
 			</p>
-			<!--         <p>© 2016 Company, Inc. · </p> -->
 		</footer>
 
 	</div>
