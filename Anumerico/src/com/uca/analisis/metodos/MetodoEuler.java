@@ -1,5 +1,6 @@
 package com.uca.analisis.metodos;
 
+
 import java.util.ArrayList;
 
 import net.objecthunter.exp4j.Expression;
@@ -26,31 +27,53 @@ public class MetodoEuler {
 	}
 	
 	public ArrayList<Double> resolverMetodoy(){
-		double xvalor = 0;
-		double yvalor = 0; 
-		do {
-			Expression e = new ExpressionBuilder(funcion)
-			        .variables("x", "y")
-			        .build()
-			        .setVariable("x",valorX)
-					.setVariable("y", valorYx);
-			double result = e.evaluate();
-			
-		    xvalor=valorX+valorH;
-		    yvalor=valorYx+(valorH*result);
-			
-		    numerosx.add(xvalor);
-		    numerosy.add(yvalor);
-			
-			valorX=xvalor;
-			valorYx=yvalor;
-			
-		} while (valorX!=valorFinal);
+		double xvalor=0;
+		double yvalor=0; 
+		double xAcotado=0;
+		double yAcotado=0;
+		double valorResta=0;
+		double residuo=0;
+		int entero=0;
+		
+			valorResta=valorFinal-valorX;
+			residuo=valorResta/valorH;
+			entero=(int) residuo;
+	
+			for (int i = 0; i <entero; i++) {
+				Expression e1 = new ExpressionBuilder(funcion)
+				        .variables("x", "y")
+				        .build()
+				        .setVariable("x",valorX)
+						.setVariable("y", valorYx);
+				double result = e1.evaluate();
+				
+				xvalor=valorX+valorH;
+			    yvalor=valorYx+(valorH*result);
+			    
+			    xAcotado=redondearDecimales(xvalor, 2);
+			    yAcotado=redondearDecimales(yvalor, 9);
+			    numerosx.add(xAcotado);
+			    numerosy.add(yAcotado);
+				
+				valorX=xvalor;
+				valorYx=yvalor;				
+			}	
 		return numerosy;
 	}
 	
 	public ArrayList<Double> resolverMetodox(){
 		return numerosx;
 	}
+
+	 public static double redondearDecimales(double valorInicial, int numeroDecimales) {
+	        double parteEntera, resultado;
+	        resultado = valorInicial;
+	        parteEntera = Math.floor(resultado);
+	        resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
+	        resultado=Math.round(resultado);
+	        resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+	        return resultado;
+	    }
+	
 	
 }

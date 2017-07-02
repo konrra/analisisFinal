@@ -50,8 +50,8 @@ var data2 = {
 		
 	var options = {
 			showLine: false,
-			  width: '400px',
-			  height: '300px'
+			  width: '600px',
+			  height: '500px'
 			};
 	
 	new Chartist.Line('#charEuler', data, options);
@@ -221,11 +221,11 @@ function seleccionados(){
 								</tbody>
 							</table>
 						</div>
-						
-<!-- 						<div class="row" > -->
+						</div>
+						<div class="col-md-8" >
 							<div id="charEuler" class="ct-chart ct-perfect-fourth"></div>
-<!-- 						</divx> -->
-					</div>
+						</div>
+					
 					</div>
 				</c:if>
 				<c:if test="${valKuta != null}">
@@ -238,7 +238,7 @@ function seleccionados(){
    <strong>Metodo Range-Kutta</strong>
 					<br>
 					<div class="form-group">
-					<div class="col-md-4">
+					<div class="col-md-8">
 						<div class="table table-condensedx">
 							<table id="crudTable" width="100%"
 								class="table table-condensed table-bordered table-striped">
@@ -269,8 +269,8 @@ function seleccionados(){
 							</table>
 						</div>
 					</div>
-						<div class="col-md-4" >
-							<div id="charKutta" class="ct-chart ct-perfect-fourth" style="margin-top: 240px;" ></div>
+						<div class="col-md-8" >
+							<div id="charKutta" class="ct-chart ct-perfect-fourth" ></div>
 						</div>
 						
 					</div>
@@ -309,7 +309,7 @@ function seleccionados(){
 						</div>
 					</div>
 					<div class="col-md-8">
-					<div id="charHeun" class="ct-chart ct-golden-section"></div>
+					<div id="charHeun"class="ct-chart "></div>
 					</div>
 <!-- 					</div> -->
 				</c:if>

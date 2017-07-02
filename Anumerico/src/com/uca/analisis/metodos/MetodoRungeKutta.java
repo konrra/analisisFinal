@@ -48,7 +48,24 @@ public class MetodoRungeKutta {
 		double valorx_k4;
 		double valory_k4;
 		
-		do {
+		double xAcotado=0;
+		double yAcotado=0;
+		
+		double k1Acotado=0;
+		double k2Acotado=0;
+		double k3Acotado=0;
+		double k4Acotado=0;
+		
+		double valorResta=0;
+		double residuo=0;
+		int entero=0;
+		
+		
+		valorResta=valorFinal-valorX;
+		residuo=valorResta/valorH;
+		entero=(int) residuo;
+		
+		for (int i = 0; i <entero; i++){
 			Expression e = new ExpressionBuilder(funcion)
 			        .variables("x", "y")
 			        .build()
@@ -98,19 +115,25 @@ public class MetodoRungeKutta {
 			
 			yvalor=valorYx+((valork1+(2*valork2)+(2*valork3)+valork4)*(valorH/6));
 			
-			numerosx.add(xvalor);
-			numerosy.add(yvalor);
+			xAcotado=redondearDecimales(xvalor, 2);
+		    yAcotado=redondearDecimales(yvalor, 9);
+			numerosx.add(xAcotado);
+			numerosy.add(yAcotado);
 			
-			numerok1.add(valork1);
-			numerok2.add(valork2);
-			numerok3.add(valork3);
-			numerok4.add(valork4);
+			k1Acotado=redondearDecimales(valork1, 9);
+		    k2Acotado=redondearDecimales(valork2, 9);
+		    k3Acotado=redondearDecimales(valork3, 9);
+		    k4Acotado=redondearDecimales(valork4, 9);
+			numerok1.add(k1Acotado);
+			numerok2.add(k2Acotado);
+			numerok3.add(k3Acotado);
+			numerok4.add(k4Acotado);
 			
 			
 			 valorX=xvalor;
 			 valorYx=yvalor;
 			 
-		} while (valorX!=valorFinal);
+		} 
 		
 		return numerosy;
 	}
@@ -131,5 +154,15 @@ public class MetodoRungeKutta {
 	public ArrayList<Double> valoresK4(){
 		return numerok4;
 	}
+
+	 public static double redondearDecimales(double valorInicial, int numeroDecimales) {
+	        double parteEntera, resultado;
+	        resultado = valorInicial;
+	        parteEntera = Math.floor(resultado);
+	        resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
+	        resultado=Math.round(resultado);
+	        resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+	        return resultado;
+	    }
 	
 }

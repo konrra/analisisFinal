@@ -2,6 +2,7 @@ package com.uca.analisis.metodos;
 
 import java.util.ArrayList;
 
+import jdk.nashorn.internal.runtime.arrays.NumericElements;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
@@ -33,8 +34,17 @@ public class MetodoHeun {
 		double numero;
 		double numero2;
 		double numero3;
+		double xAcotado=0;
+		double yAcotado=0;
+		double valorResta=0;
+		double residuo=0;
+		int entero=0;
 		
-		do {
+			valorResta=valorFinal-valorX;
+			residuo=valorResta/valorH;
+			entero=(int) residuo;
+			
+			for (int i = 0; i <entero; i++) {
 			Expression e = new ExpressionBuilder(funcion)
 			        .variables("x", "y")
 			        .build()
@@ -61,16 +71,14 @@ public class MetodoHeun {
 			
 			yvalor=(valorYx+numero3);
 			
-			
-			 numerosx.add(xvalor);
-			 numerosy.add(yvalor);
+			xAcotado=redondearDecimales(xvalor, 2);
+		    yAcotado=redondearDecimales(yvalor, 9);
+			 numerosx.add(xAcotado);
+			 numerosy.add(yAcotado);
 			 
 			 valorX=xvalor;
 			 valorYx=yvalor;
-			 
-			
-		} while (valorX!=valorFinal);
-		
+			}
 		return numerosy;
 	}
 	
@@ -78,5 +86,14 @@ public class MetodoHeun {
 		return numerosx;
 	}
 	
+	 public static double redondearDecimales(double valorInicial, int numeroDecimales) {
+	        double parteEntera, resultado;
+	        resultado = valorInicial;
+	        parteEntera = Math.floor(resultado);
+	        resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
+	        resultado=Math.round(resultado);
+	        resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+	        return resultado;
+	    }
 	
 }
