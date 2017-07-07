@@ -1,0 +1,17 @@
+{
+  "name": "analisisFinal",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "http://localhost:8080/Anumerico/"
+    }
+  ]
+}
